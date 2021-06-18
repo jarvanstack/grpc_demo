@@ -1,0 +1,19 @@
+syntax = "proto3";
+package proto1;
+option go_package = "proto1/";
+service User {
+  //one req and stream resp.
+  rpc GetUserList(GetUserRequest) returns (stream GetUserResponse){}
+  //stream req and stream resp.
+  rpc GetUserByStream(stream GetUserRequest) returns (stream GetUserResponse){}
+}
+message GetUserRequest {
+  string id = 1;
+}
+message GetUserResponse {
+  UserDTO user = 1;
+}
+message UserDTO {
+  string id = 1 ;
+  string name = 2;
+}

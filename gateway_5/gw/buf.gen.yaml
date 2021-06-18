@@ -1,0 +1,17 @@
+version: v1beta1
+plugins:
+  - name: go
+    out: ./
+    opt:
+      - paths=source_relative
+  - name: go-grpc
+    out: ./
+    opt:
+      - paths=source_relative
+  - name: grpc-gateway
+    out: ./
+    opt:
+      - paths=source_relative
+      # user custom api config you do not need it.
+      #- grpc_api_configuration=path/to/config.yaml
+      - standalone=true

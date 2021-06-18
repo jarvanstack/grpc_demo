@@ -1,0 +1,5 @@
+version: v1beta1
+name: buf.build/yourorg/myprotos
+deps:
+  # it will download this dep if you run buf generate
+  - buf.build/beta/googleapis

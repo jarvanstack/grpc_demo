@@ -1,0 +1,11 @@
+syntax = "proto3";
+package gateway;
+option go_package = "/gw";
+// 定义Hello服务
+service HelloHTTP {
+  // 定义SayHello方法
+  rpc SayHello(StringMessage) returns (StringMessage) {}
+}
+message StringMessage {
+  string message = 1;
+}

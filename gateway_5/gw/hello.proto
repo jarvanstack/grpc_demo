@@ -1,0 +1,18 @@
+syntax = "proto3";
+package gateway;
+option go_package = "/gw";
+import "google/api/annotations.proto";
+// 定义Hello服务
+service HelloHTTP {
+  // 定义SayHello方法
+  rpc SayHello(StringMessage) returns (StringMessage) {
+    // http option
+    option (google.api.http) = {
+      post: "/example/echo"
+      body: "*"
+    };
+  }
+}
+message StringMessage {
+  string message = 1;
+}
